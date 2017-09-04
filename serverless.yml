@@ -1,0 +1,48 @@
+service: codebuild-github-webhook
+
+plugins:
+  - serverless-webpack
+  - serverless-offline
+  - serverless-plugin-custom-domain
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  stage: prod
+  region: ap-southeast-2
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - codebuild:StartBuild
+      Resource:
+        - '*'
+
+custom:
+  domain: codebuild-github-webhook.603.nu
+  webpack: ./webpack.config.ts
+  webpackIncludeModules: true
+
+functions:
+  webhook:
+    handler: src/index.webhookHandler
+    memory: 512
+    timeout: 60
+    events:
+      - http:
+          method: post
+          path: /
+          cors: true
+          integration: lambda-proxy
+
+resources:
+  Resources:
+    GatewayResponse:
+      Type: 'AWS::ApiGateway::GatewayResponse'
+      Properties:
+        ResponseParameters:
+          gatewayresponse.header.Access-Control-Allow-Origin: "'*'"
+          gatewayresponse.header.Access-Control-Allow-Headers: "'*'"
+        ResponseType: EXPIRED_TOKEN
+        RestApiId: 
+          Ref: 'ApiGatewayRestApi'
+        StatusCode: '401'
