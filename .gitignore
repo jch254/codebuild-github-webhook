@@ -1,6 +1,12 @@
-.serverless/
-.webpack/
-node_modules/
 .DS_Store
-yarn-error.log
+node_modules/
 .history/
+dist/
+.vscode/
+typings.json
+npm-debug.log
+yarn-error.log
+stats.json
+.terraform/
+*.tfstate*
+*.tfplan*

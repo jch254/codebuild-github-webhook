@@ -15,6 +15,7 @@
         "cloudfront:*",
         "route53:*",
         "iam:*",
+        "apigateway:*",
         "ssm:DescribeParameters"
       ]
     },
