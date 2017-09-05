@@ -20,7 +20,10 @@ provider:
 custom:
   domain: codebuild-github-webhook.603.nu
   webpack: ./webpack.config.ts
-  webpackIncludeModules: true
+  webpackIncludeModules: false
+
+package:
+  individually: true
 
 functions:
   webhook:
