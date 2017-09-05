@@ -16,6 +16,7 @@
         "route53:*",
         "iam:*",
         "apigateway:*",
+        "cloudformation:*",
         "ssm:DescribeParameters"
       ]
     },
