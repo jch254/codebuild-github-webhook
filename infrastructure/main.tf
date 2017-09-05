@@ -28,7 +28,6 @@ resource "aws_iam_role" "codebuild_role" {
 EOF
 }
 
-# TODO: Ensure correct perms for SLS deploy
 data "template_file" "codebuild_policy" {
   template = "${file("./codebuild-role-policy.tpl")}"
 
