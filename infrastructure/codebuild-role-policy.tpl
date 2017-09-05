@@ -17,6 +17,7 @@
         "iam:*",
         "apigateway:*",
         "cloudformation:*",
+        "lambda:*",
         "ssm:DescribeParameters"
       ]
     },
