@@ -1,6 +1,6 @@
 import { APIGatewayEvent } from 'aws-lambda';
 
-interface Event extends APIGatewayEvent {
+export default interface Event extends APIGatewayEvent {
   requestContext: {
     accountId: string;
     apiId: string;
@@ -28,5 +28,3 @@ interface Event extends APIGatewayEvent {
     resourcePath: string;
   };
 }
-
-export default Event;

@@ -1,5 +1,3 @@
-interface ResponseError extends Error {
+export default interface ResponseError extends Error {
   responseStatusCode: number;
 }
-
-export default ResponseError;
