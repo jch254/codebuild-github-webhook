@@ -19,6 +19,7 @@ env:
     REMOTE_STATE_BUCKET: "603-terraform-remote-state"
   parameter-store:
     TF_VAR_github_oauth_token: "/shared/github-token"
+    GITHUB_WEBHOOK_SECRET: "/shared/github-webhook-secret"
 
 phases:
   install:

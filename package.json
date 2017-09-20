@@ -4,18 +4,22 @@
   "description": "GitHub webhook to start AWS CodeBuild builds powered by Serverless",
   "main": "src/index.ts",
   "scripts": {
+    "dev": "serverless offline start",
     "lint": "tslint --type-check --project tsconfig.json || exit 0",
     "deploy": "cross-env NODE_ENV=production serverless deploy"
   },
   "author": "Jordan Hornblow <jordan@jch254.com>",
   "license": "MIT",
   "dependencies": {
-    "aws-sdk": "^2.117.0"
+    "aws-sdk": "^2.119.0",
+    "validator": "^8.2.0",
+    "verify-github-webhook": "^1.0.1"
   },
   "devDependencies": {
     "@types/aws-lambda": "^0.0.16",
     "@types/node": "^8.0.28",
-    "@types/webpack": "^3.0.10",
+    "@types/validator": "^6.2.3",    
+    "@types/webpack": "^3.0.11",
     "awesome-typescript-loader": "^3.2.3",
     "cross-env": "^5.0.5",
     "serverless": "^1.22.0",
