@@ -1,7 +1,7 @@
 import { Callback, Context } from 'aws-lambda';
 import { CodeBuild } from 'aws-sdk';
 import * as validator from 'validator';
-// import verifyGithubWebhook from 'verify-github-webhook';
+import verifyGithubWebhook from 'verify-github-webhook';
 
 import Event from './Event';
 import GitHubWebhookPayload from './GitHubWebhookPayload';
@@ -14,8 +14,7 @@ const getCodeBuildProjectName = (repositoryName: string, ref: string): string =>
 
 const verifyWebhook = (signature: string, body: string, secret: string) => {
   try {
-    // return verifyGithubWebhook(signature, body, secret);
-    return true;
+    return verifyGithubWebhook(signature, body, secret);
   } catch (err) {
     console.log(err);
 
