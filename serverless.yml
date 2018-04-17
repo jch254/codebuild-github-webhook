@@ -18,7 +18,7 @@ provider:
         - '*'
 
 custom:
-  domain: codebuild-github-webhook.603.nu
+  domain: codebuild-github-webhook.603.nz
   webpack: ./webpack.config.ts
   webpackIncludeModules: true
 
